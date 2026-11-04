@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>苦手克服！ マット運動</title>
+<style>
+@font-face{font-family:"M PLUS Rounded 1c";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/m-plus-rounded-1c-japanese-400-normal.woff2") format("woff2")}
+@font-face{font-family:"M PLUS Rounded 1c";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/m-plus-rounded-1c-japanese-700-normal.woff2") format("woff2")}
+*{box-sizing:border-box}
+body{margin:0;background:#edf5f6;color:#17303b;font-family:"M PLUS Rounded 1c",sans-serif}
+main{max-width:1320px;margin:auto;padding:clamp(12px,3vw,32px)}
+header{margin-bottom:18px} h1{font-size:clamp(24px,4vw,40px);font-weight:700;margin:0 0 4px} p{margin:0;line-height:1.6}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,28%);gap:16px;align-items:start}
+.screen{background:#d8f0f3;border-radius:18px;overflow:hidden;aspect-ratio:16/9;display:grid;place-items:center}
+.screen p{padding:16px;text-align:center;font-weight:bold}
+video{width:100%;height:100%;background:#101923}
+[hidden]{display:none!important}
+h2{margin:10px 0 0;font-size:clamp(17px,2.7vw,25px)}
+nav{background:#fff;border-radius:18px;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+button{appearance:none;border:2px solid transparent;border-radius:10px;min-height:56px;padding:5px 3px;background:var(--color);color:var(--ink,#fff);font:inherit;cursor:pointer;touch-action:manipulation}
+button strong,button span{display:block}button span{font-size:.83em}
+button:focus-visible,button[aria-pressed=true]{outline:3px solid #142e39;outline-offset:1px}
+.green{--color:#b4d754;--ink:#22340a}.blue{--color:#67c9df;--ink:#16333c}.red{--color:#b8293a}.yellow{--color:#ffd053;--ink:#392703}.orange{--color:#ff9c44;--ink:#3c240e}.slate{--color:#253241}.teal{--color:#0d716a}
+@media(min-width:641px) and (orientation:landscape){
+html,body{height:100%}
+body{overflow:hidden}
+main{height:100vh;max-height:100vh;height:100dvh;max-height:100dvh;padding:clamp(5px,1vh,9px) clamp(10px,1.6vw,22px);display:grid;grid-template-rows:auto minmax(0,1fr);gap:clamp(4px,.7vh,7px)}
+header{margin-bottom:0;display:flex;align-items:baseline;gap:clamp(12px,2vw,28px);white-space:nowrap}
+header h1{flex:none;font-size:clamp(24px,2.7vw,38px);line-height:1.05;margin:0}
+header p{font-size:clamp(13px,1.2vw,17px);line-height:1.2}
+.layout{height:100%;min-height:0;gap:clamp(8px,1.2vw,16px);grid-template-columns:minmax(0,1fr) minmax(240px,28%)}
+.viewer{min-height:0;display:grid;grid-template-rows:minmax(0,1fr);position:relative}
+.screen{height:100%;min-height:0;aspect-ratio:auto;background:#101923}
+video{object-fit:contain}
+h2{display:none}
+#status{position:absolute;left:10px;bottom:48px;padding:4px 8px;border-radius:6px;background:#fff}
+#status:empty{display:none}
+nav{height:100%;min-height:0;padding:clamp(6px,1vh,10px);gap:clamp(4px,.7vh,8px);grid-template-rows:repeat(7,minmax(0,1fr))}
+button{min-height:0;padding:2px 3px;line-height:1.08}
+button strong{font-size:clamp(17px,1.5vw,24px)}
+button span{font-size:clamp(15px,1.25vw,20px);margin-top:3px}
+}
+@media(max-width:640px) and (orientation:portrait){.layout{grid-template-columns:1fr}.viewer{position:sticky;top:0;z-index:1;background:#edf5f6;padding-bottom:8px}}
+</style>
+</head>
+<body><main>
+<header><h1>苦手克服！ マット運動</h1><p>見たい動画のボタンをタップしよう。</p></header>
+<div class="layout">
+<section class="viewer" aria-labelledby="video-title">
+<div class="screen">
+<p id="placeholder">「お手本」や「ポイント」をえらんでね。</p>
+<video id="player" controls playsinline preload="none" hidden aria-labelledby="video-title"></video>
+</div>
+<h2 id="video-title" aria-live="polite">動画をえらぼう</h2>
+<p id="status" role="status"></p>
+</section>
+<nav aria-label="技と動画をえらぶ">
+<button type="button" class="green" data-file="01.mp4" aria-pressed="false"><strong>前転</strong><span>お手本</span></button>
+<button type="button" class="green" data-file="02.mp4" aria-pressed="false"><strong>前転</strong><span>ポイント</span></button>
+<button type="button" class="blue" data-file="03.mp4" aria-pressed="false"><strong>後転</strong><span>お手本</span></button>
+<button type="button" class="blue" data-file="04.mp4" aria-pressed="false"><strong>後転</strong><span>ポイント</span></button>
+<button type="button" class="red" data-file="05.mp4" aria-pressed="false"><strong>開脚前転</strong><span>お手本</span></button>
+<button type="button" class="red" data-file="06.mp4" aria-pressed="false"><strong>開脚前転</strong><span>ポイント</span></button>
+<button type="button" class="yellow" data-file="07.mp4" aria-pressed="false"><strong>開脚後転</strong><span>お手本</span></button>
+<button type="button" class="yellow" data-file="08.mp4" aria-pressed="false"><strong>開脚後転</strong><span>ポイント</span></button>
+<span class="blank" aria-hidden="true"></span>
+<button type="button" class="orange" data-file="09.mp4" aria-pressed="false"><strong>かべ倒立</strong><span>ポイント</span></button>
+<button type="button" class="slate" data-file="10.mp4" aria-pressed="false"><strong>側転</strong><span>ポイント</span></button>
+<button type="button" class="slate" data-file="13.mp4" aria-pressed="false"><strong>側転</strong><span>練習法</span></button>
+<button type="button" class="teal" data-file="11.mp4" aria-pressed="false"><strong>ロンダート</strong><span>お手本</span></button>
+<button type="button" class="teal" data-file="12.mp4" aria-pressed="false"><strong>ロンダート</strong><span>ポイント</span></button>
+</nav></div></main>
+<script>
+const player = document.querySelector('#player');
+const title = document.querySelector('#video-title');
+const status = document.querySelector('#status');
+const placeholder = document.querySelector('#placeholder');
+const menu = document.querySelector('nav');
+let selected;
+
+menu.addEventListener('click', (event) => {
+  const button = event.target.closest('button[data-file]');
+  if (!button || selected === button) return;
+  if (selected) selected.setAttribute('aria-pressed', 'false');
+  selected = button;
+  button.setAttribute('aria-pressed', 'true');
+  title.textContent = button.querySelector('strong').textContent + ' ' + button.querySelector('span').textContent;
+  status.textContent = '';
+  placeholder.hidden = true;
+  player.hidden = false;
+  player.src = 'videos/' + button.dataset.file;
+  player.play().catch(() => {});
+});
+player.addEventListener('error', () => {
+  status.textContent = '動画を開けませんでした。先生に知らせてね。';
+});
+</script></body></html>
